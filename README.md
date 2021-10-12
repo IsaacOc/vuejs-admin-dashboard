@@ -20,18 +20,21 @@
  - Contact Drivers page
  - Dynamic Pricing page
  - Customers page
-   - Active Drivers page
+   - Active Customers page
  - Drivers page
    - Active Drivers page
+     - Add Drivers modal
    - Deactivated Drivers page
    - Drivers Enrollment page
+     - Add Drivers modal
    - Leaderboard page
    - Drivers Performance page
    - Ride Request Details page
  - Promotions page
    - City wide page
+     - Add City wide modal
    - Coupons page
-   - Add Coupons page
+     - Add Coupons modal
    - Referrals page
  - Chat Support page
  - Analytics page
@@ -46,7 +49,9 @@
    - Vehicle Fare page
    - Geofencing page
    - Managers Settings page
+     - Add Coupons modal
    - Enable Delivery page
+     - How to use modal
 
 **Running The Project**
 
@@ -61,4 +66,3 @@
  - Php >= 7.1.*
  - Vue2.google.maps
  - echart.js
- - Ride page
