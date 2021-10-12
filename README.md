@@ -1,18 +1,61 @@
-# Vuexy - Vuejs, React, HTML & Laravel Admin Dashboard Template
+# Taxi-Code challenge Vue.js 
+<hr>
+**Overview** – This app was created for Sysntoss as a code challenge. it involve building the user interface and styling using Vue.js framework. vuejs starter kit was used.
 
-**Vuexy – Vuejs, React, HTML & Laravel Admin Dashboard Template** – is the most developer friendly & highly customizable Admin Dashboard Template based on Bootstrap 4, Bootstrap Vue & Reactstrap.
+**Features**
 
-Application Requirements
+... - Dashboard page
+... - Ride page
+...... - Ongoing Ride page
+...... - Scheduled Ride page
+...... - Completed Ride page
+...... - Concelled Ride page
+...... - missed Ride page
+... - PickUp And Delivery page
+... - Map View page
+... - Manual Dispatch page
+... - Contact Drivers page
+... - Dynamic Pricing page
+... - Customers page
+...... - Active Drivers page
+... - Drivers page
+...... - Active Drivers page
+...... - Deactivated Drivers page
+...... - Drivers Enrollment page
+...... - Leaderboard page
+...... - Drivers Performance page
+...... - Ride Request Details page
+... - Promotions page
+...... - City wide page
+...... - Coupons page
+........ - Add Coupons page
+...... - Referrals page
+... - Chat Support page
+... - Analytics page
+... - Pop Up page
+...... - View Popoup page
+...... - create Popup page
+...... - Scheduled Popup page
+...... - Scheduled Popups page
+... - Settings page
+...... - General Settings page
+...... - City Settings page
+...... - Vehicle Fare page
+...... - Geofencing page
+...... - Managers Settings page
+...... - Enable Delivery page
 
-Php >= 7.1.*
-node.js installation
-vuejs cli
-visual code development enviroment
+**Running The Project**
 
-run command to get all dependencies
+... 1. Clone this project locally
+... 2. Run npm install in commandline
+... 3. Run npm run serve in commandline
+... 3. Copy url, paste on browser and visit the site 
 
-npm install
+**Dependecies**
 
-To visit the site run command
-
-npm run serve
+... - Vuejs 2
+... - Php >= 7.1.*
+... - Vue2.google.maps
+... - echart.js
+... - Ride page
