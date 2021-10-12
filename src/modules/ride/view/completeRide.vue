@@ -28,10 +28,7 @@
         <br>
         <div>
           <!-- table -->
-          <table class="table table-responsive table-striped">
-              <tr><th>Engagement ID<span></span></th><th>Driver Name</th><th>User Name</th><th>User Phone No</th><th>Pick Up</th><th>Drop</th><th>Pickup Time</th><th>Drop Time</th><th>Vehicle Type</th></tr>
-              <tr><td colspan="9"><strong>No datain table:</strong></td></tr>
-          </table>
+          <b-table striped hover outlined :items="posts"></b-table>
         </div>
         <div>
           <span>showing 0 to 0 of 0 entries</span>
@@ -60,6 +57,23 @@ export default {
       password: '',
       clcked: true,
       iderror: '',
+      posts: [
+        {
+          userId: 1,
+          id: 1,
+          title: 'sunt aut facere repellat provident occaecati',
+        },
+        {
+          userId: 1,
+          id: 2,
+          title: 'qui est esse',
+        },
+        {
+          userId: 1,
+          id: 3,
+          title: 'ea molestias quasi exercitationem repellat qui',
+        },
+      ],
     }
   },
   methods: {

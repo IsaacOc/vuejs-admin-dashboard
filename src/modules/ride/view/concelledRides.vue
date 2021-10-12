@@ -26,10 +26,7 @@
         <br>
         <div>
           <!-- table -->
-          <table class="table table-responsive table-striped">
-              <tr><th>EngagementID<span></span></th><th>Name</th><th>User Name</th><th>PickUp</th><th>Drop</th><th>PickUp Time</th><th>Drop Time</th><th>Request Time</th><th>Reason</th></tr>
-              <tr><td colspan="9"><strong>No datain table:</strong></td></tr>
-          </table>
+          <b-table striped hover outlined :items="posts"></b-table>
         </div>
         <!--pagination-->
         <div>
@@ -60,6 +57,23 @@ export default {
       password: '',
       clcked: true,
       iderror: '',
+      posts: [
+        {
+          userId: 1,
+          id: 1,
+          title: 'sunt aut facere repellat provident occaecati',
+        },
+        {
+          userId: 1,
+          id: 2,
+          title: 'qui est esse',
+        },
+        {
+          userId: 1,
+          id: 3,
+          title: 'ea molestias quasi exercitationem repellat qui',
+        },
+      ],
     }
   },
   methods: {

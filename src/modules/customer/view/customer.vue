@@ -31,10 +31,7 @@
         </div>
         <div>
           <!-- table -->
-          <table class="table table-responsive table-striped">
-              <tr><th>UserID<span></span></th><th>UserName</th><th>PhoneNumber</th><th>Email</th><th>Email</th><th>Last Login</th><th>Last Ride On</th><th>Total Rides</th><th>View OTP</th></tr>
-              <tbody><tr><td colspan="6"><strong>No datain table:</strong></td></tr></tbody>
-          </table>
+          <b-table striped hover outlined :items="posts"></b-table>
         </div>
         <!-- pagination -->
         <div>
@@ -68,6 +65,23 @@ export default {
       password: '',
       clcked: true,
       iderror: '',
+      posts: [
+        {
+          userId: 1,
+          id: 1,
+          title: 'sunt aut facere repellat provident occaecati',
+        },
+        {
+          userId: 1,
+          id: 2,
+          title: 'qui est esse',
+        },
+        {
+          userId: 1,
+          id: 3,
+          title: 'ea molestias quasi exercitationem repellat qui',
+        },
+      ],
     }
   },
   methods: {

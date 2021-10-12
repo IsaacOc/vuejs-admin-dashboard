@@ -39,10 +39,7 @@
                 <input type="search" v-modal="search" >
                 </span>
             <!-- table -->
-            <table class="table table-responsive table-striped">
-                <tr><th>DriverID<span></span></th><th>DriverName</th><th>Phone Number</th><th>city</th><th>Rides</th><th>Rank</th></tr>
-                <tr><td colspan="5"><strong>No datain table:</strong></td></tr>
-            </table>
+            <b-table striped hover outlined :items="posts"></b-table>
             </div>
             <!-- pagination -->
             <div>
@@ -78,6 +75,23 @@ export default {
       iderror: '',
       isShow: true,
       isShow1: false,
+      posts: [
+        {
+          userId: 1,
+          id: 1,
+          title: 'sunt aut facere repellat provident occaecati',
+        },
+        {
+          userId: 1,
+          id: 2,
+          title: 'qui est esse',
+        },
+        {
+          userId: 1,
+          id: 3,
+          title: 'ea molestias quasi exercitationem repellat qui',
+        },
+      ],
     }
   },
   methods: {

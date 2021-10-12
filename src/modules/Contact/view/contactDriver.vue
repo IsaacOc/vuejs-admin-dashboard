@@ -66,10 +66,7 @@
         </div><br><br>
         <div>
           <!-- table -->
-          <table class="table table-responsive table-striped">
-              <tr><th>Select Driver<span></span></th><th>Driver ID</th><th>Driver Name</th><th>Driver Phone No</th></tr>
-              <tr><td colspan="5"><strong>No datain table:</strong></td></tr>
-          </table>
+          <b-table striped hover outlined :items="posts"></b-table>
         </div>
         <!-- pagination -->
         <div>
@@ -102,6 +99,23 @@ export default {
       password: '',
       clcked: true,
       iderror: '',
+      posts: [
+        {
+          userId: 1,
+          id: 1,
+          title: 'sunt aut facere repellat provident occaecati',
+        },
+        {
+          userId: 1,
+          id: 2,
+          title: 'qui est esse',
+        },
+        {
+          userId: 1,
+          id: 3,
+          title: 'ea molestias quasi exercitationem repellat qui',
+        },
+      ],
     }
   },
   methods: {
