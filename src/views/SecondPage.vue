@@ -24,20 +24,22 @@
         <span class="float-right">
           <!-- search buttons -->
         <label>Search</label>&nbsp;&nbsp;
-        <input type="search" v-modal="search" >
+        <b-form-input v-model="filter" type="search" id="filterInput" placeholder=""></b-form-input>
         </span>
         </div>
           <!-- table -->
-          <b-table striped hover outlined :items="posts"></b-table>
+          <b-table striped hover outlined :items="posts" :filter="filter"></b-table>
           <!-- pagination -->
         <div>
           <span>showing 0 to 0 of 0 entries</span>
-          <p><ul class="pagination justify-content-end">
-              <li class="page-item"><a class="page-link" href="#">First</a></li>
-              <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-              <li class="page-item"><a class="page-link" href="#">Next</a></li>
-              <li class="page-item"><a class="page-link" href="#">Last</a></li>
-          </ul></p>
+          <p class="pagination justify-content-end">
+            <b-pagination
+          v-model="currentPage"
+          :total-rows="rows"
+          :per-page="perPage"
+          aria-controls="my-table"
+        ></b-pagination>
+          </p>
         </div>
     </div>
   </div>
@@ -48,6 +50,9 @@ export default {
   name: 'App',
   data() {
     return {
+      perPage: 1,
+      currentPage: 1,
+      filter: '',
       posts: [
         {
           userId: 1,
@@ -66,6 +71,11 @@ export default {
         },
       ],
     }
+  },
+  computed: {
+    rows() {
+      return this.posts.length
+    },
   },
 }
 </script>
