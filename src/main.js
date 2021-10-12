@@ -1,5 +1,11 @@
 import Vue from 'vue'
-import { ToastPlugin, ModalPlugin, TablePlugin } from 'bootstrap-vue'
+import {
+  ToastPlugin,
+  ModalPlugin,
+  TablePlugin,
+  BootstrapVue,
+  IconsPlugin,
+} from 'bootstrap-vue'
 import VueCompositionAPI from '@vue/composition-api'
 
 // import css files
@@ -37,6 +43,8 @@ import '@/plugins/echarts'
 Vue.use(ToastPlugin)
 Vue.use(ModalPlugin)
 
+Vue.use(BootstrapVue)
+Vue.use(IconsPlugin)
 Vue.use(TablePlugin)
 // Composition API
 Vue.use(VueCompositionAPI)
