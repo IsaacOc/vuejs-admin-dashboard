@@ -121,23 +121,16 @@
                 <label>entries</label>
                 <span style="float:right">
                 <label>Search</label>&nbsp;&nbsp;
-                <input type="search" v-modal="search" >
+                <b-form-input v-model="filter" type="search" id="filterInput" placeholder="Type to Search"></b-form-input>
                 </span>
             <!-- table -->
-            <table class="table table-responsive table-striped">
-                <tr><th>Name<span></span></th><th>Name</th><th>Email</th><th>Max People</th><th>Status</th><th>Role</th><th>Action</th></tr>
-                <tr><td colspan="8"><strong>No datain table:</strong></td></tr>
-            </table>
+            <b-table striped hover outlined :items="posts"></b-table>
             </div>
             <!-- pagination -->
             <div>
-            <p><span>showing 0 to 0 of 0 entries</span>
-                <ul class="pagination justify-content-end">
-                    <li class="page-item"><a class="page-link" href="#">First</a></li>
-                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                    <li class="page-item"><a class="page-link" href="#">Last</a></li>
-                </ul>
+            <span>showing 0 to 0 of 0 entries</span>
+                <p class="pagination justify-content-end">
+                <b-pagination v-model="currentPage" :total-rows="rows" per-page="perPage" aria-controls="my-table"></b-pagination>
             </p>
             </div>
         </div>
@@ -153,8 +146,8 @@ export default {
   data() {
     return {
       text: '',
-      password: '',
-      clcked: true,
+      perPage: 1,
+      currentPage: 1,
       iderror: '',
       variants: ['primary', 'secondary', 'success', 'warning', 'danger', 'info', 'light', 'dark'],
       headerBgVariant: 'dark',
@@ -162,6 +155,23 @@ export default {
       name: '',
       nameState: null,
       submittedNames: [],
+      posts: [
+        {
+          userId: 1,
+          id: 1,
+          title: 'sunt aut facere repellat provident occaecati',
+        },
+        {
+          userId: 1,
+          id: 2,
+          title: 'qui est esse',
+        },
+        {
+          userId: 1,
+          id: 3,
+          title: 'ea molestias quasi exercitationem repellat qui',
+        },
+      ],
     }
   },
   methods: {
@@ -191,6 +201,11 @@ export default {
       this.$nextTick(() => {
         this.$bvModal.hide('modal-prevent-closing')
       })
+    },
+  },
+  computed: {
+    rows() {
+      return this.posts.length
     },
   },
 }

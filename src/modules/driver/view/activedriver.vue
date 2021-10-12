@@ -31,7 +31,7 @@
         <div>
             <span class="float-right">
         <label>Search</label>&nbsp;&nbsp;
-        <input type="search" v-modal="search" >
+        <b-form-input v-model="filter" type="search" id="filterInput" placeholder="Type to Search"></b-form-input>
         </span>
           <!-- table -->
           <b-table striped hover outlined :items="posts"></b-table>
@@ -39,13 +39,13 @@
         <!-- pagination -->
         <div>
           <span>showing 0 to 0 of 0 entries</span>
-          <p>
-            <ul class="pagination justify-content-end">
-              <li class="page-item"><a class="page-link" href="#">First</a></li>
-              <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-              <li class="page-item"><a class="page-link" href="#">Next</a></li>
-              <li class="page-item"><a class="page-link" href="#">Last</a></li>
-            </ul>
+          <p class="pagination justify-content-end">
+            <b-pagination
+          v-model="currentPage"
+          :total-rows="rows"
+          :per-page="perPage"
+          aria-controls="my-table"
+        ></b-pagination>
           </p>
         </div>
     </div>
@@ -64,9 +64,9 @@ export default {
   data() {
     return {
       text: '',
-      password: '',
-      clcked: true,
-      iderror: '',
+      perPage: 1,
+      currentPage: 1,
+      filter: '',
       posts: [
         {
           userId: 1,
@@ -95,6 +95,11 @@ export default {
     },
     RideDetails() {
       this.iderror = this.text.length > 0 ? '' : 'id needed'
+    },
+  },
+  computed: {
+    rows() {
+      return this.posts.length
     },
   },
 }

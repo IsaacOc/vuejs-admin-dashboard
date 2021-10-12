@@ -136,21 +136,22 @@
                 <label>entries</label>
                 <span style="float:right">
                 <label>Search</label>&nbsp;&nbsp;
-                <input type="search" v-modal="search" >
+                <b-form-input v-model="filter" type="search" id="filterInput" placeholder="Type to Search"></b-form-input>
                 </span>
             <!-- table -->
             <b-table striped hover outlined :items="posts"></b-table>
             </div>
             <!-- pagination -->
             <div>
-            <p><span>showing 0 to 0 of 0 entries</span>
-                <ul class="pagination justify-content-end">
-                    <li class="page-item"><a class="page-link" href="#">First</a></li>
-                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                    <li class="page-item"><a class="page-link" href="#">Last</a></li>
-                </ul>
-            </p>
+            <span>showing 0 to 0 of 0 entries</span>
+                <p class="pagination justify-content-end">
+            <b-pagination
+          v-model="currentPage"
+          :total-rows="rows"
+          :per-page="perPage"
+          aria-controls="my-table"
+        ></b-pagination>
+          </p>
             </div>
         </div>
   </div>
@@ -164,8 +165,6 @@ export default {
   },
   data() {
     return {
-      text: '',
-      password: '',
       clcked: true,
       iderror: '',
       variants: ['primary', 'secondary', 'success', 'warning', 'danger', 'info', 'light', 'dark'],
@@ -174,6 +173,9 @@ export default {
       name: '',
       nameState: null,
       submittedNames: [],
+      perPage: 1,
+      currentPage: 1,
+      filter: '',
       posts: [
         {
           userId: 1,
@@ -220,6 +222,11 @@ export default {
       this.$nextTick(() => {
         this.$bvModal.hide('modal-prevent-closing')
       })
+    },
+  },
+  computed: {
+    rows() {
+      return this.posts.length
     },
   },
 }
