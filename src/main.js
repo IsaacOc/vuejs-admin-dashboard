@@ -1,6 +1,10 @@
 import Vue from 'vue'
-import { ToastPlugin, ModalPlugin } from 'bootstrap-vue'
+import { ToastPlugin, ModalPlugin, TablePlugin } from 'bootstrap-vue'
 import VueCompositionAPI from '@vue/composition-api'
+
+// import css files
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 import VueModular from 'vue-modular'
 import * as VueGoogleMaps from 'vue2-google-maps'
@@ -33,6 +37,7 @@ import '@/plugins/echarts'
 Vue.use(ToastPlugin)
 Vue.use(ModalPlugin)
 
+Vue.use(TablePlugin)
 // Composition API
 Vue.use(VueCompositionAPI)
 
