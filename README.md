@@ -57,7 +57,7 @@
 
  1. Clone this project locally
  2. Run npm install in commandline
- 3. Run npm run serve in commandline
+ 3. Run npm run serve or npm run serve --fix in commandline
  3. Copy url, paste on browser and visit the site 
 
 **Dependecies**
