@@ -53,7 +53,7 @@
                             <span><b>Show Region Specific Fare</b></span><br><br>
                             <!-- form radio -->
                             <span class="radio-inline" >
-                            <input type="radio" name="required" >&nbsp;Enabled
+                              <input type="radio" name="required" >&nbsp;Enabled
                             </span><br><br>
                             <span class="radio-inline" >
                             <input type="radio" name="required" checked >&nbsp;Disabled
@@ -61,41 +61,41 @@
                             </div>
                             <br><br>
                             <span><b>Mandatory Fare Capping Threhold</b></span><br><br>
-                            <input type="text" class="form-control" placeholder="10">
+                            <b-form-input type="text" class="form-control" placeholder="10"></b-form-input>
                             <span><b>Theme Color</b></span><br>
-                            <input type="text" class="form-control">
+                            <b-form-input type="text" class="form-control"></b-form-input>
                             <span><b>Onboarding Info</b></span><br><br>
                             <textarea class="form-control" ></textarea>
-                            <a href="/images/myw3schoolsimage.jpg" class="form-control" download="w3logo">Download Sample html</a>
+                            <a href="/images/myw3schoolsimage.jpg" download="w3logo">Download Sample html</a><br><br>
                             <span><b>Splash screen</b></span><br><br>
-                            <input type="file" class="form-control" placeholder="10">
+                            <b-form-input type="file" class="form-control" placeholder="10"></b-form-input>
                             <span><b>Home screen Background Image</b></span><br><br>
-                            <input type="file" class="form-control" placeholder="10">
+                            <b-form-input type="file" placeholder="10"></b-form-input>
                             <span><b>Customer Login Otp Message</b></span><br>
-                            <input type="text" class="form-control">
+                            <b-form-input type="text" class="form-control"></b-form-input>
                             <span><b>Customer Rate Card Info</b></span><br><br>
                             <textarea class="form-control" ></textarea>
                         </div>
                         <div class="form-group col-md-6">
                             <span><b>Emergency No.</b></span><br>
-                            <input type="text" class="form-control" placeholder="911">
+                            <b-form-input type="text" class="form-control" placeholder="911"></b-form-input>
                             <span><b>Driver Support No.</b></span><br>
-                            <input type="text" class="form-control" placeholder="">
+                            <b-form-input type="text" class="form-control" placeholder=""></b-form-input>
                             <span><b>Customer Support No.</b></span><br>
-                            <input type="text" class="form-control" placeholder="">
+                            <b-form-input type="text" class="form-control" placeholder=""></b-form-input>
                             <span><b>Advertise Credits</b></span><br>
-                            <input type="text" class="form-control" placeholder="0">
+                            <b-form-input type="text" class="form-control" placeholder="0"></b-form-input>
                             <span><b>Support Email</b></span><br>
-                            <input type="text" class="form-control" placeholder="support@email.com">
+                            <b-form-input type="text" class="form-control" placeholder="support@email.com"></b-form-input>
                             <span><b>Operational Name</b></span><br>
-                            <input type="text" class="form-control" />
+                            <b-form-input type="text" class="form-control" ></b-form-input>
                             <span><b>Operational Info</b></span><br>
                             <textarea class="form-control" ></textarea><br>
                             <span>Please save html here</span><br><br>
                             <span><b>Logo Url</b></span><br><br>
-                            <input type="file" class="form-control">
+                            <b-form-input type="file" class="form-control"></b-form-input>
                             <span><b>Customer Login Otp Message IOS</b></span><br>
-                            <input type="text" class="form-control" />
+                            <b-form-input type="text" class="form-control" ></b-form-input>
                         </div>
                     </div>
                             <div v-if="iderror" class="error">{{iderror}}</div><br><br>

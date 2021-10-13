@@ -5,7 +5,7 @@
       <div class="col-xs-6 col-md-4 divform">
         <form @submit.prevent="UserDetails">
           <label>User Detail</label>
-          <input type="text" required v-modal="text" placeholder="Enter User details">
+          <b-form-input type="text" required v-modal="text" placeholder="Enter User details"></b-form-input>
           <div v-if="iderror" class="error">{{iderror}}</div><br/>
           <div>
             <!-- form radio -->
@@ -30,7 +30,7 @@
       <div class="col-xs-6 col-md-4 divform">
         <form @submit.prevent="VehicleDetails" >
           <label>Driver Detail</label>
-          <input type="text" required v-modal="text" placeholder="Enter User details"><br>
+          <b-form-input type="text" required v-modal="text" placeholder="Enter Driver details"></b-form-input><br>
           <div>
             <!-- form radio -->
             <b class="radio-inline" >
@@ -54,7 +54,7 @@
       <div class="col-xs-6 col-md-4" style="text-align: center">
         <form @submit.prevent="RideDetails" >
           <label>Ride Detail</label>
-          <input type="text" required v-modal="text" placeholder="Enter User details"><br>
+          <b-form-input type="text" required v-modal="text" placeholder="Enter Ride details"></b-form-input><br>
           <div>
             <!-- form radio -->
             <b class="radio-inline" >

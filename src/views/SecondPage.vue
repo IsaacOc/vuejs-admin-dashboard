@@ -4,7 +4,7 @@
        <div>
          <!-- search by date -->
             <form @submit.prevent="UserDetails" >
-                <input type="date" required >
+                <b-form-input type="date" required v-modal="date"></b-form-input>
                 <div v-if="iderror" class="error">{{iderror}}</div>&nbsp;&nbsp;
                 <button class="btn btn-info">Search</button>
             </form>

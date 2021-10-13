@@ -26,11 +26,11 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                         <span ><b>Operator Name</b></span><br><br>
-                        <input type="text" class="form-control" placeholder="taxi">
+                        <b-form-input type="text" class="form-control" placeholder="taxi"></b-form-input>
                         </div>
                         <div class="form-group col-md-6">
                         <span><b>Support Email</b></span><br><br>
-                        <input type="password" class="form-control" placeholder="support@email.com">
+                        <b-form-input type="password" class="form-control" placeholder="support@email.com"></b-form-input>
                         </div>
                     </div>
                     <div class="form-row">
@@ -89,9 +89,9 @@
                         <div class="form-group col-md-6">
                         <span><b>Autos Panel Theme Color</b></span><br>
                         <span><b>Main_olor</b></span><br><br>
-                        <input type="text" class="form-control" placeholder="#c1c1c">
+                        <b-form-input type="text" class="form-control" placeholder="#c1c1c"></b-form-input>
                         <span><b>Secondary_olor</b></span><br>
-                        <input type="text" class="form-control" placeholder="#02b3e4">
+                        <b-form-input type="text" class="form-control" placeholder="#02b3e4"></b-form-input>
                         </div>
                         <div class="form-group col-md-6">
                         <span><b>Enable/Disable Driver Debt Check</b></span><br>
@@ -102,13 +102,13 @@
                         <span><b>Customer Tip Values</b></span><br>
                         <div class="form-row">
                             <div class="form-group col-md-2">
-                                <input type="text" class="form-control" placeholder="10">
+                                <b-form-input type="text" class="form-control" placeholder="10"></b-form-input>
                                 </div>
                                 <div class="form-group col-md-2">
-                                <input type="text" class="form-control" placeholder="20">
+                                <b-form-input type="text" class="form-control" placeholder="20"></b-form-input>
                                 </div>
                                 <div class="form-group col-md-2">
-                                <input type="text" class="form-control" placeholder="30">
+                                <b-form-input type="text" class="form-control" placeholder="30"></b-form-input>
                             </div>
                             <div class="form-row">
                             <span><b>Commission Deduction</b></span><br>
@@ -148,7 +148,7 @@
                             </select>
                         </div>
                         <div class="form-group col-md-6">
-                            <input type="text" class="form-control" ><br>
+                            <b-form-input type="text" class="form-control" ></b-form-input><br>
                         <span><b>Maps Preference</b></span><br>
                         <Select class="custom-select my-1 mr-sm-2">
                                 <option>Google</option>
@@ -159,11 +159,11 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <span><b>Wallet cash max Capping</b></span>
-                        <input type="text" class="form-control"  placeholder="20">
+                        <b-form-input type="text" class="form-control"  placeholder="20"></b-form-input>
                         </div>
                         <div class="form-group col-md-6">
-                        <input type="text" class="form-control" placeholder="0" ><br><br>
-                        <input type="text" class="form-control"  placeholder="0">
+                        <b-form-input type="text" class="form-control" placeholder="0" ></b-form-input><br><br>
+                        <b-form-input type="text" class="form-control"  placeholder="0"></b-form-input>
                         </div>
                     </div>
                             <div v-if="iderror" class="error">{{iderror}}</div><br><br>
