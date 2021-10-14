@@ -139,11 +139,46 @@
                 <b-form-input v-model="filter" type="search" id="filterInput" placeholder="Type to Search"></b-form-input>
                 </span>
             <!-- table -->
-            <b-table striped hover outlined :items="posts"></b-table>
+            <b-table
+      :items="items"
+      :fields="fields"
+      :current-page="currentPage"
+      :per-page="perPage"
+      :filter="filter"
+      :filter-included-fields="filterOn"
+      :sort-by.sync="sortBy"
+      :sort-desc.sync="sortDesc"
+      :sort-direction="sortDirection"
+      show-empty
+      small
+      responsive
+      @filtered="onFiltered"
+    >
+      <template #cell(name)="row">
+        {{ row.value.first }} {{ row.value.last }}
+      </template>
+
+      <template #cell(actions)="row">
+        <b-button size="sm" @click="info(row.item, row.index, $event.target)" class="mr-1">
+          Info modal
+        </b-button>
+        <b-button size="sm" @click="row.toggleDetails">
+          {{ row.detailsShowing ? 'Hide' : 'Show' }} Details
+        </b-button>
+      </template>
+
+      <template #row-details="row">
+        <b-card>
+          <ul>
+            <li v-for="(value, key) in row.item" :key="key">{{ key }}: {{ value }}</li>
+          </ul>
+        </b-card>
+      </template>
+    </b-table>
             </div>
             <!-- pagination -->
             <div>
-            <span>showing 0 to 0 of 0 entries</span>
+            <span>showing {{ currentPage }} to {{ perPage }} of {{ totalRows }} entries</span>
                 <p class="pagination justify-content-end">
             <b-pagination
           v-model="currentPage"
@@ -173,24 +208,67 @@ export default {
       name: '',
       nameState: null,
       submittedNames: [],
-      perPage: 1,
+      totalRows: 1,
       currentPage: 1,
-      filter: '',
-      posts: [
+      perPage: 5,
+      pageOptions: [5, 10, 15, { value: 100, text: 'Show a lot' }],
+      sortBy: '',
+      sortDesc: false,
+      sortDirection: 'asc',
+      filter: null,
+      filterOn: [],
+      infoModal: {
+        id: 'info-modal',
+        title: '',
+        content: '',
+      },
+      items: [
+      ],
+      fields: [
         {
-          userId: 1,
-          id: 1,
-          title: 'sunt aut facere repellat provident occaecati',
+          key: 'S.No', label: 'S.No', sortable: true, sortDirection: 'desc',
         },
         {
-          userId: 1,
-          id: 2,
-          title: 'qui est esse',
+          key: 'Coupon ID', label: 'Coupon ID', sortable: true, class: 'text-center',
         },
         {
-          userId: 1,
-          id: 3,
-          title: 'ea molestias quasi exercitationem repellat qui',
+          key: 'Promo Type', label: 'Promo Type', sortable: true, class: 'text-center',
+        },
+        {
+          key: 'Title', label: 'Title', sortable: true, class: 'text-center',
+        },
+        {
+          key: 'Sub Title', label: 'Sub Title', sortable: true, class: 'text-center',
+        },
+        {
+          key: 'Latitude', label: 'Latitude', sortable: true, class: 'text-center',
+        },
+        {
+          key: 'Longitude', label: 'Longitude', sortable: true, class: 'text-center',
+        },
+        {
+          key: 'Radius', label: 'Radius', sortable: true, class: 'text-center',
+        },
+        {
+          key: 'Benefit Type', label: 'Benefit Type', sortable: true, class: 'text-center',
+        },
+        {
+          key: 'Discount Type', label: 'Discount Type', sortable: true, class: 'text-center',
+        },
+        {
+          key: 'Value', label: 'Value', sortable: true, class: 'text-center',
+        },
+        {
+          key: 'Maximum Value', label: 'Maximum Value', sortable: true, class: 'text-center',
+        },
+        {
+          key: 'No of Coupons', label: 'No of Coupons', sortable: true, class: 'text-center',
+        },
+        {
+          key: 'Allowed Vehicles', label: 'Allowed Vehicles', sortable: true, class: 'text-center',
+        },
+        {
+          key: 'Action', label: 'Action',
         },
       ],
     }
@@ -223,11 +301,24 @@ export default {
         this.$bvModal.hide('modal-prevent-closing')
       })
     },
-  },
-  computed: {
-    rows() {
-      return this.posts.length
+    info(item, index, button) {
+      this.infoModal.title = `Row index: ${index}`
+      this.infoModal.content = JSON.stringify(item, null, 2)
+      this.$root.$emit('bv::show::modal', this.infoModal.id, button)
     },
+    resetInfoModal() {
+      this.infoModal.title = ''
+      this.infoModal.content = ''
+    },
+    onFiltered(filteredItems) {
+      // Trigger pagination to update the number of buttons/pages due to filtering
+      this.totalRows = filteredItems.length
+      this.currentPage = 1
+    },
+  },
+  mounted() {
+    // Set the initial number of items
+    this.totalRows = this.items.length
   },
 }
 </script>
