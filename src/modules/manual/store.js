@@ -1,17 +1,16 @@
 export default {
-    namespaced: true,
-    state: {
-      ride: [],
+  namespaced: true,
+  state: {
+    ride: [],
+  },
+  mutations: {
+    setFoo(state, ride) {
+      state.ride = ride
     },
-    mutations: {
-      setFoo(state, ride) {
-        state.ride = ride
-      },
+  },
+  getters: {
+    getRide(state) {
+      return state.ride
     },
-    getters: {
-      getRide(state) {
-        return state.ride
-      },
-    },
-  }
-  
+  },
+}
