@@ -48,8 +48,8 @@ export default {
     }
   },
   methods: {
-    goToHome(){
-      this.$router.push('/addynamics'); 
+    goToHome() {
+      this.$router.push('/addynamics')
     },
     UserDetails() {
 

@@ -1,9 +1,9 @@
 import general from './view/General.vue'
-import city_general from './view/city_general.vue'
-import vehicle_fare from './view/vehicle_fare.vue'
+import citygeneral from './view/city_general.vue'
+import vehiclefare from './view/vehicle_fare.vue'
 import geofencing from './view/geofencing.vue'
-import manager_settings from './view/manager_settings.vue'
-import enable_delivery from './view/enable_delivery.vue'
+import managersettings from './view/manager_settings.vue'
+import enabledelivery from './view/enable_delivery.vue'
 
 export default {
   routes: [
@@ -24,7 +24,7 @@ export default {
     {
       path: '/city_general',
       name: 'city_general',
-      component: city_general,
+      component: citygeneral,
       meta: {
         pageTitle: 'City Setting',
         breadcrumb: [
@@ -38,7 +38,7 @@ export default {
     {
       path: '/vehicle_fare',
       name: 'vehicle_fare',
-      component: vehicle_fare,
+      component: vehiclefare,
       meta: {
         pageTitle: 'Vehicle Fare Setting',
         breadcrumb: [
@@ -59,14 +59,14 @@ export default {
           {
             text: 'Geofencing',
             active: true,
-           },
+          },
         ],
       },
     },
     {
       path: '/manager_settings',
       name: 'manager_settings',
-      component: manager_settings,
+      component: managersettings,
       meta: {
         pageTitle: 'Manager Settings',
         breadcrumb: [
@@ -80,7 +80,7 @@ export default {
     {
       path: '/enable_delivery',
       name: 'enable_delivery',
-      component: enable_delivery,
+      component: enabledelivery,
       meta: {
         pageTitle: 'Enable Delivery',
         breadcrumb: [

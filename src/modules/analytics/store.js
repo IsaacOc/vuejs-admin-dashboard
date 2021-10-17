@@ -1,6 +1,6 @@
 export default {
-    namespaced: true,
-    state: {
-      ride: [],
-    },
-  }
+  namespaced: true,
+  state: {
+    ride: [],
+  },
+}

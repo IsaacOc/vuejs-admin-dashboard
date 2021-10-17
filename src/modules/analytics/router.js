@@ -1,11 +1,11 @@
-import analytics from './view/analytics.vue'
+import analytic from './view/analytics.vue'
 
 export default {
   routes: [
     {
       path: '/analytics',
       name: 'analytics',
-      component: analytics,
+      component: analytic,
       meta: {
         pageTitle: 'Analytics',
         breadcrumb: [

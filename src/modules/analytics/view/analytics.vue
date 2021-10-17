@@ -1,10 +1,10 @@
 <template>
 <div>
 <div>
-<chart :options="chartOptionsBar"></chart>
+   <chart :options="chartOptionsBar"></chart>
 </div>
-<div>
-<chart :options="chartOptionsLine"></chart>
+<div class="chart-wrapper">
+    <chart :options="chartOptionsLine"></chart>
 </div>
 </div>
 </template>

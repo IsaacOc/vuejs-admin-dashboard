@@ -3,8 +3,8 @@ import Vue from 'vue'
 import VueCompositionAPI from '@vue/composition-api'
 
 // import css files
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+// import 'bootstrap/dist/css/bootstrap.css'
+// import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 import {
   ToastPlugin,
@@ -13,6 +13,8 @@ import {
   BootstrapVue,
   IconsPlugin,
 } from 'bootstrap-vue'
+import 'core-js/stable'
+// import 'regenerator-runtime/runtime'
 
 import VueModular from 'vue-modular'
 import * as VueGoogleMaps from 'vue2-google-maps'

@@ -5,13 +5,12 @@ export default {
   },
   mutations: {
     setFoo(state, ride) {
-        state.ride = ride
+      state.ride = ride
     },
   },
   getters: {
     getRide(state) {
-       return state.ride
+      return state.ride
     },
   },
 }
-  

@@ -150,17 +150,17 @@ export default [
       {
         title: 'Create Popup',
         route: 'create',
-        icon: 'FileIcon',
+        icon: 'Filecon',
       },
       {
         title: 'Schedule Popup',
         route: 'schedule',
-        icon: 'FileIcon',
+        icon: 'FilIcon',
       },
       {
         title: 'Scheduled Popups',
         route: 'scheduled',
-        icon: 'FileIcon',
+        icon: 'Filecon',
       },
     ],
   },

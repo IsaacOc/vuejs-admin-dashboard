@@ -10,13 +10,13 @@
           <div>
             <!-- form radio -->
             <b class="radio-inline" >
-              <input type="radio" name="required" checked >User ID
+              <input type="radio" v-model="selected" value="UserID" name="User" checked >User ID
             </b>
             <b class="radio-inline" >
-              <input type="radio" name="required" >Email
+              <input type="radio" v-model="selected" value="Email" name="User" >Email
             </b>
             <b class="radio-inline" >
-              <input type="radio" name="required" >Phone
+              <input type="radio" v-model="selected" value="Phone" name="User" >Phone
             </b>
             <div v-if="iderror" class="error">{{iderror}}</div>
             </div>
@@ -34,13 +34,13 @@
           <div>
             <!-- form radio -->
             <b class="radio-inline" >
-              <input type="radio" name="required" checked >Driver ID
+              <input type="radio" value="Driver_ID"  name="Driver" checked >Driver ID
             </b>
             <b class="radio-inline" >
-              <input type="radio" name="required" >Phone
+              <input type="radio" value="Phone"  name="Driver" >Phone
             </b>
             <b class="radio-inline" >
-              <input type="radio" name="required" >Vehicle No
+              <input type="radio" value="Vehicle_No"  name="Driver" >Vehicle No
             </b>
             <div v-if="iderror" class="error">{{iderror}}</div>
             </div>
@@ -58,7 +58,7 @@
           <div>
             <!-- form radio -->
             <b class="radio-inline" >
-              <input type="radio" name="Ride_ID" checked >Ride ID
+              <input type="radio" value="Ride_ID"  name="Ride_ID" checked >Ride ID
             </b>
             <div v-if="iderror" class="error">{{iderror}}</div>
             </div>
@@ -87,6 +87,7 @@ export default {
       password: '',
       clcked: true,
       iderror: '',
+      selected: '',
     }
   },
   methods: {
