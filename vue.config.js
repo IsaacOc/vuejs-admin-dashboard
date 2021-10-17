@@ -20,6 +20,26 @@ module.exports = {
         '@axios': path.resolve(__dirname, 'src/libs/axios'),
       },
     },
+    optimization: {
+      runtimeChunk: 'single',
+      splitChunks: {
+        chunks: 'all',
+        maxInitialRequests: Infinity,
+        minSize: 0,
+        cacheGroups: {
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name(module) {
+              // get the name E.g node_modules/pckageName/not/part/json
+              // or node_modules/packagename
+              const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
+              //npm package names are URL-safe,but some server dont like
+              return `npm.${packageName.replace('@', '')}`;
+            }
+          }
+        }
+      }
+    }
   },
   chainWebpack: config => {
     config.module
@@ -43,5 +63,5 @@ module.exports = {
         return options
       })
   },
-  transpileDependencies: ['vue-echarts', 'resize-detector'],
+  transpileDependencies: ['vue-echarts', 'resize-detector', 'vue-modular', 'router', 'store', 'vueuse'],
 }
