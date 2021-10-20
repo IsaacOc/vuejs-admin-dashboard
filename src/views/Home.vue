@@ -3,62 +3,62 @@
     <div class="row">
     <!-- form details -->
       <div class="col-xs-6 col-md-4 divform">
-        <form @submit.prevent="UserDetails">
+        <form v-on:submit.prevent="UserDetails" method="post">
           <label>User Detail</label>
-          <b-form-input type="text" required v-modal="text" placeholder="Enter User details"></b-form-input>
+          <b-form-input type="text" required v-model="usertext" name="usertext" placeholder="Enter User details"></b-form-input>
           <div v-if="iderror" class="error">{{iderror}}</div><br/>
           <div>
             <!-- form radio -->
             <b class="radio-inline" >
-              <input type="radio" v-model="selected" value="UserID" name="User" checked >User ID
+              <input type="radio" v-model="userradio" value="UserID" name="Userdetail" checked >User ID
             </b>
             <b class="radio-inline" >
-              <input type="radio" v-model="selected" value="Email" name="User" >Email
+              <input type="radio" v-model="userradio" value="Email" name="Userdetail" >Email
             </b>
             <b class="radio-inline" >
-              <input type="radio" v-model="selected" value="Phone" name="User" >Phone
+              <input type="radio" v-model="userradio" value="Phone" name="Userdetail" >Phone
             </b>
             <div v-if="iderror" class="error">{{iderror}}</div>
             </div>
             <!-- form button -->
           <div class="sumbit">
-            <button class="btn btn-info">User Details</button>
+            <button class="btn btn-info" >User Details</button>
           </div>
         </form>
       </div>
       <!-- form details -->
       <div class="col-xs-6 col-md-4 divform">
-        <form @submit.prevent="VehicleDetails" >
+        <form @submit.prevent="VehicleDetails" method="post">
           <label>Driver Detail</label>
-          <b-form-input type="text" required v-modal="text" placeholder="Enter Driver details"></b-form-input><br>
+          <b-form-input type="text" required v-model="drivertext" placeholder="Enter Driver details"></b-form-input><br>
           <div>
             <!-- form radio -->
             <b class="radio-inline" >
-              <input type="radio" value="Driver_ID"  name="Driver" checked >Driver ID
+              <input type="radio" value="Driver_ID" v-model="driverradio" name="Driver" checked >Driver ID
             </b>
             <b class="radio-inline" >
-              <input type="radio" value="Phone"  name="Driver" >Phone
+              <input type="radio" value="Phone" v-model="driverradio" name="Driver" >Phone
             </b>
             <b class="radio-inline" >
-              <input type="radio" value="Vehicle_No"  name="Driver" >Vehicle No
+              <input type="radio" value="Vehicle_No" v-model="driverradio" name="Driver" >Vehicle No
             </b>
             <div v-if="iderror" class="error">{{iderror}}</div>
             </div>
             <!-- form button -->
           <div class="sumbit">
-            <button class="btn btn-info">Driver Details</button>
+            <button class="btn btn-info" >Driver Details</button>
           </div>
         </form>
       </div>
       <!-- form details -->
       <div class="col-xs-6 col-md-4" style="text-align: center">
-        <form @submit.prevent="RideDetails" >
+        <form v-on:submit.prevent="RideDetails" method="post">
           <label>Ride Detail</label>
-          <b-form-input type="text" required v-modal="text" placeholder="Enter Ride details"></b-form-input><br>
+          <b-form-input type="text" required v-model="Ridetext" placeholder="Enter Ride details"></b-form-input><br>
           <div>
             <!-- form radio -->
             <b class="radio-inline" >
-              <input type="radio" value="Ride_ID"  name="Ride_ID" checked >Ride ID
+              <input type="radio" value="RideID" v-model="rideradio" name="Ride" >Ride ID
             </b>
             <div v-if="iderror" class="error">{{iderror}}</div>
             </div>
@@ -74,6 +74,7 @@
 
 <script>
 // import { BCard, BCardText } from 'bootstrap-vue'
+import apiService from '@/Network/NetworkService'
 
 export default {
   components: {
@@ -83,22 +84,47 @@ export default {
   },
   data() {
     return {
-      text: '',
-      password: '',
+      events: [],
       clcked: true,
       iderror: '',
-      selected: '',
+      usertext: '',
+      userradio: '',
+      drivertext: '',
+      Ridetext: '',
+      driverradio: '',
+      rideradio: '',
     }
   },
   methods: {
     UserDetails() {
-
+    // api to post userdetails
+      apiService.PostUserDetails(this.userradio, this.usertext)
+        .then(response => {
+          this.events = response.data
+        })
+        . catch(error => {
+          console.log('There ws an error:', error.response)
+        })
     },
     VehicleDetails() {
-
+    // api to post vehicledetails
+      apiService.PostVehicleDetails(this.driverradio, this.drivertext)
+        .then(response => {
+          this.events = response.data
+        })
+        . catch(error => {
+          console.log('There ws an error:', error.response)
+        })
     },
     RideDetails() {
-      this.iderror = this.text.length > 0 ? '' : 'id needed'
+    // api to post userdetails
+      apiService.PostRideDetails(this.Ridetext, this.rideradio)
+        .then(response => {
+          this.events = response.data
+        })
+        . catch(error => {
+          console.log('There ws an error:', error.response)
+        })
     },
   },
 }
@@ -108,14 +134,6 @@ export default {
   .divform {
     border-right: 1px solid #ddd;
     text-align: center;
-  }
-  span{
-    color: black;
-    display: inline-block;
-    margin: 25px 0 15px;
-    font-size: 1em;
-    letter-spacing:1px;
-    font-weight: bold;
   }
   input{
     display: block;
@@ -142,14 +160,6 @@ export default {
     border: none;
     border-bottom: 1px solid #ddd;
     color: #555;
-  }
-  button {
-    background: #0b6dff;
-    border: 0;
-    padding: 10px 20px;
-    margin-top:20px;
-    color: white;
-    border-radius: 2px;
   }
   submit {
     text-align: center;
