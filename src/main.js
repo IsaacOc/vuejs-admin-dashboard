@@ -42,6 +42,7 @@ import './global-components'
 import '@/libs/portal-vue'
 import '@/libs/toastification'
 import '@/plugins/echarts'
+import '@/libs/axios'
 
 // BSV Plugin Registration
 Vue.use(ToastPlugin)
