@@ -7,7 +7,6 @@
     <component :is="layout">
       <router-view />
     </component>
-    <AddGoogleMap />
 
   </div>
 </template>
