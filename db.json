@@ -1,0 +1,69 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "userid": 1,
+      "email": "taxi@info.com",
+      "phone": "256"
+    },
+    {
+      "userid": "2",
+      "id": 2
+    },
+    {
+      "userid": "dd",
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    }
+  ],
+  "driver": [
+    {
+      "id": 1,
+      "driverid": 1,
+      "phone": "some comment",
+      "VehicleID": 1
+    },
+    {
+      "drivertext": "Driver_ID",
+      "driverradio": "j",
+      "id": 2
+    },
+    {
+      "drivertext": "Phone",
+      "driverradio": "r",
+      "id": 3
+    }
+  ],
+  "ride": [
+    {
+      "id": 1,
+      "ridetext": "2",
+      "rideradio": "RideID"
+    },
+    {
+      "ridetext": "1",
+      "rideradio": "RideID",
+      "id": 2
+    },
+    {
+      "ridetext": "1",
+      "rideradio": "RideID",
+      "id": 3
+    },
+    {
+      "ridetext": "1",
+      "rideradio": "RideID",
+      "id": 4
+    },
+    {
+      "ridetext": "1",
+      "rideradio": "RideID",
+      "id": 5
+    }
+  ]
+}
