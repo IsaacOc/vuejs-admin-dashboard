@@ -4,7 +4,7 @@
        <div>
          <!-- search by date -->
             <form @submit.prevent="UserDetails" >
-                <b-form-input type="date" required v-modal="date"></b-form-input>
+                <b-form-input type="date" required v-model="date"></b-form-input>
                 <div v-if="iderror" class="error">{{iderror}}</div>&nbsp;&nbsp;
                 <button class="btn btn-info">Search</button>
             </form>
@@ -128,6 +128,8 @@ export default {
         // },
         // { key: 'actions', label: 'Actions' },
       ],
+      date: '',
+      iderror: '',
       totalRows: 1,
       currentPage: 1,
       perPage: 5,
