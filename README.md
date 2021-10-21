@@ -58,7 +58,11 @@
  1. Clone this project locally
  2. Run npm install in commandline
  3. Run npm run serve or npm run serve --fix in commandline
- 3. Copy url, paste on browser and visit the site 
+ 3. Copy url, paste on browser and visit the site
+ 4. install json-server 
+ 5. Run npm install -g json-server
+ 6. connect json-server to db.josn file
+ 7. Run json-server --watch db.json 
 
 **Dependecies**
 
@@ -66,3 +70,5 @@
  - Php >= 7.1.*
  - Vue2.google.maps
  - echart.js
+ - vue-modular
+ - json-server
