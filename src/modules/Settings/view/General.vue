@@ -8,12 +8,12 @@
                 @show="resetModal"
                 @ok="handleOk"
                 size="lg"
-                hide-footer="true"
+                hide-footer
                 ><!--modal form-->
                 <form ref="form" @submit.stop.prevent="handleSubmit">
                     <div class="form-group">
                         <div class="d-flex justify-content-between">
-                        <input type="file" class="form-control" placeholder="">&nbsp;&nbsp;
+                        <input type="file" class="form-control" >&nbsp;&nbsp;
                         <button class="btn btn-info" >submit</button>
                         </div>
                     </div>
@@ -197,6 +197,8 @@ export default {
     }
   },
   methods: {
+    UserDetails() {
+    },
     checkFormValidity() {
       const valid = this.$refs.form.checkValidity()
       this.nameState = valid

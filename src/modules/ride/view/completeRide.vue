@@ -1,16 +1,15 @@
 <template>
-  <div >
-    <div class="container-fluid divback">
+  <div class="container-fluid divback">
+    <div class="row divback">
       <!-- form deta -->
         <div>
             <form @submit.prevent="UserDetails" >
                 <input type="date" required >
-                <div v-if="iderror" class="error">{{iderror}}</div>&nbsp;&nbsp;
                 <button class="btn btn-info">Search</button>
             </form>
         </div>
     </div><br>
-    <div class="container-fluid divback">
+    <div class="row divback">
       <!-- show entries -->
         <div>
             <label>Show</label>&nbsp;&nbsp;
@@ -70,7 +69,7 @@
           <p class="pagination justify-content-end">
             <b-pagination
           v-model="currentPage"
-          :total-rows="rows"
+          :total-rows="totalRows"
           :per-page="perPage"
           aria-controls="my-table"
         ></b-pagination>
@@ -81,13 +80,9 @@
 </template>
 
 <script>
-// import { BCard, BCardText } from 'bootstrap-vue'
 
 export default {
   components: {
-    // BCard,
-    // BCardText,
-    // BLink,
   },
   data() {
     return {

@@ -23,7 +23,7 @@
             <!-- search -->
         <span class="float-right">
         <label>Search</label>&nbsp;&nbsp;
-        <input type="search" v-modal="search" >
+        <b-form-input v-model="filter" type="search" id="filterInput" placeholder="Type to Search"></b-form-input>
         </span>
         </div>
         <br>
@@ -72,7 +72,7 @@
           <p class="pagination justify-content-end">
             <b-pagination
           v-model="currentPage"
-          :total-rows="rows"
+          :total-rows="totalRows"
           :per-page="perPage"
           aria-controls="my-table"
         ></b-pagination>
@@ -184,7 +184,7 @@ export default {
   input[type="date"]{
     display:inline-block;
     padding: 10px 6px;
-    width: 350px;
+    max-width: 350px;
     box-sizing: border-box;
     border: none;
     border-bottom: 1px solid #ddd;
@@ -199,15 +199,6 @@ export default {
     color: #555;
     display:inline-block;
   }
-  /* input[type="search"] {
-    display:block;
-    padding:10px 6px;
-    width:250px;
-    box-sizing: border-box;
-    border: 1px solid #ddd;
-    color: #555;
-    display:inline-block;
-  } */
   .span{
       border: 1px solid #ddd;
       padding: 0.4em;

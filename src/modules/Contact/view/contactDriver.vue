@@ -2,12 +2,11 @@
   <div class="container-fluid divback">
     <div class="row">
     <!-- form details -->
-      <div class="col-xs-6 col-md-4 divform">
+      <div class="col-xs-6 col-md-4 ">
     <!-- form contact -->
     <div class="divf" >
       <h4>Message Type</h4><br><br>
       <form @submit.prevent="UserDetails" class="form1">
-        <div v-if="iderror" class="error">{{iderror}}</div>
         <div class="clicked">
           <!-- message type -->
             <b class="radio-inline" >
@@ -19,7 +18,6 @@
             <b class="radio-inline" >
               <input type="radio" name="required" >Sms and Push
             </b><br><br>
-            <div v-if="iderror" class="error">{{iderror}}</div>
         </div>
         <hr/>
         <h4>Send Push</h4><br>
@@ -61,7 +59,7 @@
         <span class="float-right">
           <!-- form search -->
         <b>Search</b>&nbsp;&nbsp;
-        <b-form-input v-model="filter" type="search" id="filterInput" placeholder="Type to Search"></b-form-input>
+        <b-form-input v-model="filter" class="form-control" type="search" id="filterInput" placeholder="Type to Search"></b-form-input>
         </span>
         </div><br><br>
         <div>
@@ -188,14 +186,6 @@ export default {
 </script>
 
 <style>
-  .divfo {
-    border-radius: 0px;
-    border: 1px solid #ddd;;
-    background:white;
-    padding: 0.6em;
-    display:inline-block;
-
-    }
   .divf {
     border-radius: 0px;
     border: 1px solid #ddd;
@@ -203,7 +193,6 @@ export default {
     display:inline-block;
   }
   .form1{
-    max-width:4500px;
     margin: auto;
     padding: 0px;
     border-radius: 10px;

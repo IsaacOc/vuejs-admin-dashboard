@@ -2,6 +2,7 @@
   <div>
     <div class="container-fluid divback">
         <!-- vehicle type -->
+        <div class="row">
             <label>Vehicle Type</label>&nbsp;&nbsp;
             <Select class="form-control select1">
                 <option>All</option>
@@ -9,6 +10,7 @@
                 <option>TAXI POOL</option>
             </select>
             <button @click="goToHome()" class="float-right btn btn-info">Add</button>
+        </div>
     </div><br>
     <div class="container-fluid divback">
         <!-- map -->
@@ -41,24 +43,18 @@ export default {
   },
   data() {
     return {
-      text: '',
-      password: '',
-      clcked: true,
-      iderror: '',
+      center: {
+        lat: 39.7837304,
+        lng: -100.4458825,
+      },
+      locationMarkers: [],
+      locPlaces: [],
+      existingPlace: null,
     }
   },
   methods: {
     goToHome() {
       this.$router.push('/addynamics')
-    },
-    UserDetails() {
-
-    },
-    VehicleDetails() {
-
-    },
-    RideDetails() {
-      this.iderror = this.text.length > 0 ? '' : 'id needed'
     },
   },
 }

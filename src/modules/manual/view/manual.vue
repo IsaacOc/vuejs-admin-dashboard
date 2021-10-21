@@ -11,7 +11,6 @@
                         <!-- form phoNo -->
                       <label><b>UserPhoneNo</b></label><br>
                           <input type="text" class="form-control" placeholder=" Enter User phone number" required><br>
-                      <div v-if="iderror" class="error">{{iderror}}</div>
                         <div class="divf1">
                             <!-- form user details -->
                             <label><b>UserName</b></label><br>

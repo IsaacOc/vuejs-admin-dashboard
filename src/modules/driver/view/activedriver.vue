@@ -1,8 +1,30 @@
 <template>
   <div >
+    <!--modal-->
+                <b-modal
+                id="modal-prevent-closing"
+                ref="modal"
+                title="Referral Data"
+                @show="resetModal"
+                @hidden="resetModal"
+                @ok="handleOk"
+                size="lg"
+                ><!--modal form-->
+                <form ref="form" @submit.stop.prevent="handleSubmit">
+                    <div class="form-group">
+                        <span ><b>Type</b></span>
+                        <Select class="custom-select my-1 mr-sm-2">
+                            <option></option>
+                            <option>On Station</option>
+                            <option>OnDemand</option>
+                            <option>Rental</option>
+                        </select>
+                    </div>
+                </form>
+                </b-modal>
     <div class="container-fluid">
       <!-- Add button -->
-            <button class="btn btn-info">Add Driver</button><br><br>
+            <button v-b-modal.modal-prevent-closing class="btn btn-info">Add Driver</button><br><br>
             <h3>Note: You cannot add driver in the demo mode. Use the driver credentials given in demo email only.</h3>
       </div><br>
       <div class="container-fluid divback">
@@ -77,7 +99,7 @@
           <p class="pagination justify-content-end">
             <b-pagination
           v-model="currentPage"
-          :total-rows="rows"
+          :total-rows="totalRows"
           :per-page="perPage"
           aria-controls="my-table"
         ></b-pagination>
@@ -178,6 +200,33 @@ export default {
       // Trigger pagination to update the number of buttons/pages due to filtering
       this.totalRows = filteredItems.length
       this.currentPage = 1
+    },
+    checkFormValidity() {
+      const valid = this.$refs.form.checkValidity()
+      this.nameState = valid
+      return valid
+    },
+    resetModal() {
+      this.name = ''
+      this.nameState = null
+    },
+    handleOk(bvModalEvt) {
+      // Prevent modal from closing
+      bvModalEvt.preventDefault()
+      // Trigger submit handler
+      this.handleSubmit()
+    },
+    handleSubmit() {
+      // Exit when the form isn't valid
+      if (!this.checkFormValidity()) {
+        return
+      }
+      // Push the name to submitted names
+      this.submittedNames.push(this.name)
+      // Hide the modal manually
+      this.$nextTick(() => {
+        this.$bvModal.hide('modal-prevent-closing')
+      })
     },
   },
 }

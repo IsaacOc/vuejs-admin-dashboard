@@ -85,6 +85,22 @@ export default {
   name: 'App',
   data() {
     return {
+      date: '',
+      iderror: '',
+      totalRows: 1,
+      currentPage: 1,
+      perPage: 5,
+      pageOptions: [5, 10, 15, { value: 100, text: 'Show a lot' }],
+      sortBy: '',
+      sortDesc: false,
+      sortDirection: 'asc',
+      filter: null,
+      filterOn: [],
+      infoModal: {
+        id: 'info-modal',
+        title: '',
+        content: '',
+      },
       items: [
       ],
       fields: [
@@ -128,22 +144,6 @@ export default {
         // },
         // { key: 'actions', label: 'Actions' },
       ],
-      date: '',
-      iderror: '',
-      totalRows: 1,
-      currentPage: 1,
-      perPage: 5,
-      pageOptions: [5, 10, 15, { value: 100, text: 'Show a lot' }],
-      sortBy: '',
-      sortDesc: false,
-      sortDirection: 'asc',
-      filter: null,
-      filterOn: [],
-      infoModal: {
-        id: 'info-modal',
-        title: '',
-        content: '',
-      },
     }
   },
   mounted() {

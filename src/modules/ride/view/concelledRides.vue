@@ -3,8 +3,7 @@
     <div class="container-fluid divback">
       <!-- form deta -->
             <form @submit.prevent="UserDetails" >
-                <input type="date" required >
-                <div v-if="iderror" class="error">{{iderror}}</div>&nbsp;&nbsp;
+                <input type="date" required >&nbsp;&nbsp;
                 <button class="btn btn-info">Search</button>
             </form>
     </div><br>
@@ -69,7 +68,7 @@
           <p class="pagination justify-content-end">
             <b-pagination
           v-model="currentPage"
-          :total-rows="rows"
+          :total-rows="totalRows"
           :per-page="perPage"
           aria-controls="my-table"
         ></b-pagination>
@@ -84,9 +83,6 @@
 
 export default {
   components: {
-    // BCard,
-    // BCardText,
-    // BLink,
   },
   data() {
     return {
@@ -189,16 +185,6 @@ export default {
     text-transform: uppercase;
     letter-spacing:1px;
     font-weight: bold;
-  }
-  input[type="date"]{
-    display:inline-block;
-    padding: 10px 6px;
-    width: 350px;
-    box-sizing: border-box;
-    border: none;
-    border-bottom: 1px solid #ddd;
-    color: #555;
-    text-align: center;
   }
   .select {
     display:inline-block;

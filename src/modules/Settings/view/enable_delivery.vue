@@ -9,8 +9,8 @@
                 @hidden="resetModal"
                 @ok="handleOk"
                 size="lg"
-                hide-header="true"
-                hide-footer="true"
+                hide-header
+                hide-footer
                 ><!--modal form-->
                 <form ref="form" @submit.stop.prevent="handleSubmit">
                     <div class="container-fluid" style="text-align:center">

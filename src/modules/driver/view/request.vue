@@ -2,7 +2,7 @@
   <div >
       <div class="container-fluid divback">
             <div>
-                <input class="form-control" type="search" v-modal="search" placeholder="DriverID" >&nbsp;&nbsp;
+                <input class="form-control" type="search" v-model="search" placeholder="DriverID" >&nbsp;&nbsp;
                 <button class="btn btn-primary" @click="isShow = !isShow" >Search</button>
             </div >
     </div><br/>
@@ -73,7 +73,7 @@
                   <p class="pagination justify-content-end">
             <b-pagination
           v-model="currentPage"
-          :total-rows="rows"
+          :total-rows="totalRows"
           :per-page="perPage"
           aria-controls="my-table"
         ></b-pagination>
@@ -98,6 +98,10 @@ export default {
   },
   data() {
     return {
+      search: '',
+      isShow: true,
+      isShowDate: true,
+      isShowDate1: true,
       totalRows: 1,
       currentPage: 1,
       perPage: 5,

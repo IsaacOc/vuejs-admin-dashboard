@@ -10,9 +10,8 @@
                 title="Referral Data"
                 @show="resetModal"
                 @hidden="resetModal"
-                @ok="handleOk"
                 size="lg"
-                hide-footer="true"
+                hide-footer= isShow
                 ><!--modal form-->
                 <h3>All Document</h3>
                 <b>Driver Image</b>
@@ -100,7 +99,7 @@
           <p class="pagination justify-content-end">
             <b-pagination
           v-model="currentPage"
-          :total-rows="rows"
+          :total-rows="totalRows"
           :per-page="perPage"
           aria-controls="my-table"
         ></b-pagination>
@@ -122,6 +121,7 @@ export default {
   },
   data() {
     return {
+      isShow: true,
       totalRows: 1,
       currentPage: 1,
       perPage: 5,
@@ -179,6 +179,10 @@ export default {
       this.totalRows = filteredItems.length
       this.currentPage = 1
     },
+    resetModal() {
+      this.name = ''
+      this.nameState = null
+    },
   },
 }
 </script>
@@ -194,41 +198,5 @@ export default {
     background-color: white;
     border: 1px solid #ddd;
     padding:0.5em;
-  }
-  .form{
-    max-width:320px;
-    margin: auto;
-    padding:40px;
-    border-radius: 10px;
-  }
-  label{
-    color: black;
-    display: inline-block;
-    margin: 25px 0 15px;
-    font-size: 1em;
-    text-transform: uppercase;
-    letter-spacing:1px;
-    font-weight: bold;
-  }
-  .select {
-    display:inline-block;
-    padding:10px 6px;
-    width:80px;
-    box-sizing: border-box;
-    border: 1px solid #ddd;
-    color: #555;
-  }
-  input[type="search"] {
-    display:block;
-    padding:10px 6px;
-    width:250px;
-    box-sizing: border-box;
-    border: 1px solid #ddd;
-    color: #555;
-    display:inline-block;
-  }
-  .span{
-      border: 1px solid #ddd;
-      padding: 0.4em;
   }
 </style>

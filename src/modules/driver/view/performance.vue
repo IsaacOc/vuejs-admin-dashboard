@@ -5,7 +5,7 @@
             <span class="container-fluid">OR</span>
             <button class="btn btn-info float-right" @click="isShow1 = !isShow1" role="button">Filter By Time</button><br><br>
             <div v-if="isShow">
-                <input class="form-control" type="search" v-modal="search" >&nbsp;&nbsp;
+                <input class="form-control" type="search" v-model="search" >&nbsp;&nbsp;
                 <button class="btn btn-info">Search</button>
             </div >
             <div v-if="isShow1">
@@ -82,7 +82,7 @@
             <p class="pagination justify-content-end">
             <b-pagination
           v-model="currentPage"
-          :total-rows="rows"
+          :total-rows="totalRows"
           :per-page="perPage"
           aria-controls="my-table"
         ></b-pagination>

@@ -182,7 +182,7 @@
                 <p class="pagination justify-content-end">
             <b-pagination
           v-model="currentPage"
-          :total-rows="rows"
+          :total-rows="totalRows"
           :per-page="perPage"
           aria-controls="my-table"
         ></b-pagination>
@@ -200,7 +200,7 @@ export default {
   },
   data() {
     return {
-      clcked: true,
+      isShowDate: true,
       iderror: '',
       variants: ['primary', 'secondary', 'success', 'warning', 'danger', 'info', 'light', 'dark'],
       headerBgVariant: 'dark',

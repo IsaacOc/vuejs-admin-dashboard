@@ -26,7 +26,6 @@
             <div>
             <!-- form details -->
                     <span><b>General Settings</b></span>
-                            <div v-if="iderror" class="error">{{iderror}}</div><br><br>
                             <div class="vertical-center">
                             <button v-b-modal.modal-prevent-closing class="btn btn-info">Add</button>
                           </div>
@@ -68,9 +67,9 @@
                             <textarea class="form-control" ></textarea>
                             <a href="/images/myw3schoolsimage.jpg" download="w3logo">Download Sample html</a><br><br>
                             <span><b>Splash screen</b></span><br><br>
-                            <b-form-input type="file" class="form-control" placeholder="10"></b-form-input>
+                            <input type="file" class="form-control"/>
                             <span><b>Home screen Background Image</b></span><br><br>
-                            <b-form-input type="file" placeholder="10"></b-form-input>
+                            <input type="file" class="form-control"/>
                             <span><b>Customer Login Otp Message</b></span><br>
                             <b-form-input type="text" class="form-control"></b-form-input>
                             <span><b>Customer Rate Card Info</b></span><br><br>
@@ -93,7 +92,7 @@
                             <textarea class="form-control" ></textarea><br>
                             <span>Please save html here</span><br><br>
                             <span><b>Logo Url</b></span><br><br>
-                            <b-form-input type="file" class="form-control"></b-form-input>
+                            <input type="file" class="form-control"/>
                             <span><b>Customer Login Otp Message IOS</b></span><br>
                             <b-form-input type="text" class="form-control" ></b-form-input>
                         </div>
@@ -116,7 +115,6 @@ export default {
   },
   data() {
     return {
-      text: '',
       password: '',
       clcked: true,
       iderror: '',

@@ -62,20 +62,12 @@ export default {
   },
   data() {
     return {
-      text: '',
-      password: '',
       clcked: true,
       iderror: '',
       isShow: true,
     }
   },
   methods: {
-    UserDetails() {
-
-    },
-    VehicleDetails() {
-
-    },
     RideDetails() {
       this.iderror = this.text.length > 0 ? '' : 'id needed'
     },
