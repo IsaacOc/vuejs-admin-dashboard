@@ -1,17 +1,17 @@
 <template>
-  <div >
-    <div class=" container-fluid divback">
-       <div>
+  <div class=" container-fluid">
+    <div class=" row" >
+       <div class="col-xs-6 col-lg-12 divback">
          <!-- search by date -->
             <form @submit.prevent="UserDetails" >
-                <b-form-input type="date" required v-model="date"></b-form-input>
+                <input type="date" class="form-control" required v-model="date"/>
                 <div v-if="iderror" class="error">{{iderror}}</div>&nbsp;&nbsp;
                 <button class="btn btn-info">Search</button>
             </form>
         </div>
     </div><br>
-    <div class="container-fluid divback">
-        <div>
+    <div class="row">
+        <div class="col-xs-6 col-lg-12 divback">
           <!-- search by entries -->
             <label>Show</label>&nbsp;&nbsp;
             <!-- select -->
@@ -28,53 +28,55 @@
         </span>
         </div><br><br>
           <!-- table -->
-           <b-table
-      :items="items"
-      :fields="fields"
-      :current-page="currentPage"
-      :per-page="perPage"
-      :filter="filter"
-      :filter-included-fields="filterOn"
-      :sort-by.sync="sortBy"
-      :sort-desc.sync="sortDesc"
-      :sort-direction="sortDirection"
-      show-empty
-      small
-      responsive
-      @filtered="onFiltered"
-    >
-      <template #cell(name)="row">
-        {{ row.value.first }} {{ row.value.last }}
-      </template>
-
-      <template #cell(actions)="row">
-        <b-button size="sm" @click="info(row.item, row.index, $event.target)" class="mr-1">
-          Info modal
-        </b-button>
-        <b-button size="sm" @click="row.toggleDetails">
-          {{ row.detailsShowing ? 'Hide' : 'Show' }} Details
-        </b-button>
-      </template>
-
-      <template #row-details="row">
-        <b-card>
-          <ul>
-            <li v-for="(value, key) in row.item" :key="key">{{ key }}: {{ value }}</li>
-          </ul>
-        </b-card>
-      </template>
-    </b-table>
-          <!-- pagination -->
-        <div>
-          <span>showing {{ currentPage }} to {{ perPage }} of {{ totalRows }} entries</span>
-          <p class="pagination justify-content-end">
-            <b-pagination
-          v-model="currentPage"
-          :total-rows="totalRows"
+    <div class="col-xs-6 col-md-12 divback">
+              <b-table
+          :items="items"
+          :fields="fields"
+          :current-page="currentPage"
           :per-page="perPage"
-          aria-controls="my-table"
-        ></b-pagination>
-          </p>
+          :filter="filter"
+          :filter-included-fields="filterOn"
+          :sort-by.sync="sortBy"
+          :sort-desc.sync="sortDesc"
+          :sort-direction="sortDirection"
+          show-empty
+          small
+          responsive
+          @filtered="onFiltered"
+        >
+          <template #cell(name)="row">
+            {{ row.value.first }} {{ row.value.last }}
+          </template>
+
+          <template #cell(actions)="row">
+            <b-button size="sm" @click="info(row.item, row.index, $event.target)" class="mr-1">
+              Info modal
+            </b-button>
+            <b-button size="sm" @click="row.toggleDetails">
+              {{ row.detailsShowing ? 'Hide' : 'Show' }} Details
+            </b-button>
+          </template>
+
+          <template #row-details="row">
+            <b-card>
+              <ul>
+                <li v-for="(value, key) in row.item" :key="key">{{ key }}: {{ value }}</li>
+              </ul>
+            </b-card>
+          </template>
+        </b-table>
+          <!-- pagination -->
+          <div>
+            <span>showing {{ currentPage }} to {{ perPage }} of {{ totalRows }} entries</span>
+            <p class="pagination justify-content-end">
+                <b-pagination
+                v-model="currentPage"
+                :total-rows="totalRows"
+                :per-page="perPage"
+                aria-controls="my-table"
+              ></b-pagination>
+            </p>
+          </div>
         </div>
     </div>
   </div>
@@ -170,68 +172,4 @@ export default {
 </script>
 
 <style>
-  .divf {
-    border-radius: 0px;
-    border: 1px solid #ddd;;
-    background:white;
-    margin-bottom: 50px;
-    padding: 0.6em;
-    max-width: 100%;
-  }
-  .form{
-    max-width:320px;
-    margin: 30px auto;
-    text-align: center;
-    padding:40px;
-    border-radius: 10px;
-  }
-  label{
-    color: black;
-    display: inline-block;
-    margin: 25px 0 15px;
-    font-size: 1em;
-    text-transform: uppercase;
-    letter-spacing:1px;
-    font-weight: bold;
-  }
-  input[type="date"]{
-    display:inline-block;
-    padding: 10px 6px;
-    width: 350px;
-    box-sizing: border-box;
-    border: none;
-    border-bottom: 1px solid #ddd;
-    color: #555;
-    text-align: center;
-  }
-  .submit1{
-      width: 400px;
-      display:inline-block;
-  }
-  .select {
-    display:inline-block;
-    padding:10px 6px;
-    width:80px;
-    box-sizing: border-box;
-    border: 1px solid #ddd;
-    color: #555;
-  }
-  input[type="search"] {
-    display:block;
-    padding:10px 6px;
-    width:250px;
-    box-sizing: border-box;
-    border: 1px solid #ddd;
-    color: #555;
-    display:inline-block;
-  }
-  .span{
-      border: 1px solid #ddd;
-      padding: 0.4em;
-  }
-  .table {
-    padding: 0.5em;
-    text-align: center;
-
-  }
 </style>

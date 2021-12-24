@@ -135,6 +135,50 @@ export default {
     border-right: 1px solid #ddd;
     text-align: center;
   }
+  .divback {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding:0.5em;
+  }
+  .divfo {
+    border-radius: 0px;
+    border: 1px solid #ddd;;
+    background:white;
+    padding: 0.6em;
+    display:inline-block;
+    }
+  .divf1 {
+    border-radius: 0px;
+    border: 1px solid #ddd;
+    padding: 0.6em;
+  }
+  .divf {
+    border-radius: 0px;
+    border: 1px solid #ddd;;
+    background:white;
+    padding: 0.6em;
+  }
+  .divf {
+    border-radius: 0px;
+    border: 1px solid #ddd;
+    padding: 0.6em;
+    display:inline-block;
+  }
+  .divf {
+    border-radius: 0px;
+    border: 1px solid #ddd;;
+    background:white;
+    margin-bottom: 50px;
+    padding: 0.6em;
+  }
+  .divf {
+    border-radius: 0px;
+    border: 1px solid #ddd;;
+    background:white;
+    margin-bottom: 50px;
+    padding: 0.6em;
+    max-width: 100%;
+  }
   input{
     display: block;
     padding: 10px 6px;
@@ -161,13 +205,106 @@ export default {
     border-bottom: 1px solid #ddd;
     color: #555;
   }
-  submit {
+  .select {
+    display:inline-block;
+    padding:10px 6px;
+    width:80px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    color: #555;
+  }
+  .select1 {
+    display:inline-block;
+    padding:10px 6px;
+    width:200px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    color: #555;
+  }
+  .select1 {
+    display:inline-block;
+    padding:10px 6px;
+    width:250px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    color: #555;
+  }
+  .span{
+      border: 1px solid #ddd;
+      padding: 0.4em;
+  }
+  input[type="date"]{
+    display:inline-block;
+    padding: 10px 6px;
+    max-width: 350px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    color: #555;
     text-align: center;
+  }
+  input[type="search"] {
+    display:block;
+    padding:10px 6px;
+    width:250px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    color: #555;
+    display:inline-block;
+  }
+.vertical-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  .form{
+    max-width:320px;
+    margin: auto;
+    padding:40px;
+    border-radius: 10px;
+  }
+  .form1{
+    margin: auto;
+    padding: 0px;
+    border-radius: 10px;
+  }
+  .form{
+    max-width:320px;
+    margin: 30px auto;
+    text-align: center;
+    padding:40px;
+    border-radius: 10px;
+  }
+  label{
+    color: black;
+    display: inline-block;
+    margin: 25px 0 15px;
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing:1px;
+    font-weight: bold;
   }
   .error {
     color: red;
     margin-top: 10px;
     font-size: 0.8em;
     font-weight: bold;
+  }
+  .submit1{
+      width: 400px;
+      display:inline-block;
+  }
+  .submitv1{
+      width: 400px;
+  }
+  .scrol{
+    height: 550px;
+    overflow-y: scroll;
+    overflow-x: auto;
+  }
+  .table {
+    padding: 0.5em;
+    text-align: center;
+
   }
 </style>
