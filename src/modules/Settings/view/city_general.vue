@@ -158,9 +158,4 @@ export default {
 }
 </script>
 <style>
-.vertical-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 </style>

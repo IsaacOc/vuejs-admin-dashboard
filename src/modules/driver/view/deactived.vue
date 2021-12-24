@@ -167,9 +167,4 @@ export default {
 </script>
 
 <style>
-  .divback {
-    background-color: white;
-    border: 1px solid #ddd;
-    padding:0.5em;
-  }
   </style>

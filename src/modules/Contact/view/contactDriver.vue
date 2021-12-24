@@ -186,49 +186,4 @@ export default {
 </script>
 
 <style>
-  .divf {
-    border-radius: 0px;
-    border: 1px solid #ddd;
-    padding: 0.6em;
-    display:inline-block;
-  }
-  .form1{
-    margin: auto;
-    padding: 0px;
-    border-radius: 10px;
-  }
-  label{
-    color: black;
-    display: inline-block;
-    margin: 25px 0 15px;
-    font-size: 1em;
-    text-transform: uppercase;
-    letter-spacing:1px;
-    font-weight: bold;
-  }
-  .submit1{
-      width: 400px;
-      display:inline-block;
-  }
-  .select1 {
-    display:inline-block;
-    padding:10px 6px;
-    width:200px;
-    box-sizing: border-box;
-    border: 1px solid #ddd;
-    color: #555;
-  }
-  input[type="search"] {
-    display:block;
-    padding:10px 6px;
-    width:250px;
-    box-sizing: border-box;
-    border: 1px solid #ddd;
-    color: #555;
-    display:inline-block;
-  }
-  .span{
-      border: 1px solid #ddd;
-      padding: 0.4em;
-  }
 </style>

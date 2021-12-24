@@ -11,7 +11,7 @@
                 @show="resetModal"
                 @hidden="resetModal"
                 size="lg"
-                hide-footer= isShow
+                hide-footer
                 ><!--modal form-->
                 <h3>All Document</h3>
                 <b>Driver Image</b>
@@ -188,15 +188,4 @@ export default {
 </script>
 
 <style>
-  .divf {
-    border-radius: 0px;
-    border: 1px solid #ddd;;
-    background:white;
-    padding: 0.6em;
-  }
-  .divback {
-    background-color: white;
-    border: 1px solid #ddd;
-    padding:0.5em;
-  }
 </style>

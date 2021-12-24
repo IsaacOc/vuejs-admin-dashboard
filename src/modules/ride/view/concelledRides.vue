@@ -3,7 +3,7 @@
     <div class="container-fluid divback">
       <!-- form deta -->
             <form @submit.prevent="UserDetails" >
-                <input type="date" required >&nbsp;&nbsp;
+                <input type="date" class="form-control" required >&nbsp;&nbsp;
                 <button class="btn btn-info">Search</button>
             </form>
     </div><br>
@@ -163,48 +163,4 @@ export default {
 </script>
 
 <style>
-  .divf {
-    border-radius: 0px;
-    border: 1px solid #ddd;;
-    background:white;
-    margin-bottom: 50px;
-    padding: 0.6em;
-  }
-  .form{
-    max-width:320px;
-    margin: 30px auto;
-    text-align: center;
-    padding:40px;
-    border-radius: 10px;
-  }
-  label{
-    color: black;
-    display: inline-block;
-    margin: 25px 0 15px;
-    font-size: 1em;
-    text-transform: uppercase;
-    letter-spacing:1px;
-    font-weight: bold;
-  }
-  .select {
-    display:inline-block;
-    padding:10px 6px;
-    width:80px;
-    box-sizing: border-box;
-    border: 1px solid #ddd;
-    color: #555;
-  }
-  input[type="search"] {
-    display:block;
-    padding:10px 6px;
-    width:250px;
-    box-sizing: border-box;
-    border: 1px solid #ddd;
-    color: #555;
-    display:inline-block;
-  }
-  .span{
-      border: 1px solid #ddd;
-      padding: 0.4em;
-  }
 </style>
