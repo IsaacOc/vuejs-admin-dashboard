@@ -1,9 +1,9 @@
-# Taxi-Code challenge Vue.js 
+# Taxi-Code Vue.js 
 <hr>
 
 **Overview**
 
- - This app was created for Sysntoss as a code challenge. it involve building the user interface and styling using Vue.js framework. vuejs starter kit was used.
+ - This app  involve building the user interface and styling using Vue.js framework. vuejs starter kit was used.
 
 **Features**
 
